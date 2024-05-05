@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block base %}
+<div class="container">
+  <div class="row">
+    <div class="col p-2">
+      <form class = "col-6 mx-auto card p-3 shadow-lg" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h4>Update Blog</h4>
+        <div class="mb-3">
+          <label for="exampleInputReceipe" class="form-label">Blog Title</label>
+          <input type="text" name="blog_title" value="{{blog.title}}" required class="form-control" id="exampleInputReceipe">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputDesc" class="form-label">Description</label>
+          <textarea type="text" name="blog_description" required class="form-control" id="exampleInputDesc">{{blog.description}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputImg" class="form-label">Image</label>
+            <input type="file" name="blog_image" class="form-control" id="exampleInputImg">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div> 
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block base %}
+<div class="container">
+  <div class="row">
+    <div class="col p-2">
+        <div class="card h-100">
+          <img src="/media/{{view_blog.image}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{view_blog.title}}</h5>
+            <p class="card-text">{{view_blog.description}}</p>
+            
+            <a href="/update-blog/{{view_blog.id}}" class="btn btn-info">Update</a>
+            <a href="/delete-blog/{{view_blog.id}}" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div> 
+{% endblock %}
